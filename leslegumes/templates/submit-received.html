@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Les Legumes - Thank you!</title>
+<link href="{% static 'css/llr_styles.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<header class="main_header"><div class="header_table"><table>
+  <tbody>
+    <tr>
+      <td class="secondary-head-section"><a href="{% url 'menu' %}">Menu</a></td>
+      <td class="secondary-head-section"><a href="{% url 'reviews' %}">Reviews</a></td>
+      <td class="primary-head-section"><a href="{% url 'index' %}"><img src="{% static 'assets/logo.png' %}" alt="Les Legumes" class="header_logo"/></a></td>
+      <td class="secondary-head-section"><a href="{% url 'contact' %}">Contact</a></td>
+      <td class="secondary-head-section"><a href="{% url 'reserve' %}">Reserve</a></td>
+    </tr>
+  </tbody>
+</table></div>
+</header>
+<div class="content">
+	<div class="story">
+	  <h1>Thank you!</h1>
+	  <p>{{ message }}</p>
+	</div>
+</div>
+<footer class="main_footer"><hr>
+<table>
+  <tbody>
+    <tr>
+      <td class="logo_section"><a href="{% url 'index' %}"><img src="{% static 'assets/blk_logo.png' %}" alt="Les Legumes" class="footer_logo"/></a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td class="email_section"><a href="mailto:info@leslegumesrestaurant.com">EMAIL US</a></td>
+      <td class="hours_section">M-Th: 11 a.m. - 10p.m. | F-Sa: 12 p.m. - 12 a.m. | Su: CLOSED</td>
+    </tr>
+  </tbody>
+</table>
+</footer>
+</body>
+</html>

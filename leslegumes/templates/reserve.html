@@ -1,0 +1,185 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Les Legumes - Reserve</title>
+<link href="{% static 'css/llr_styles.css' %}" rel="stylesheet" type="text/css">
+
+ <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+<!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"
+        integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
+<!-- Tempus Dominus Bootstrap 4 -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css"
+        integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"
+        integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+
+<!-- Date Time Picker CSS -->
+<link rel="stylesheet" href="{% static 'date-time-phone/jquery-ui.css' %}">
+<link rel='stylesheet' href="{% static 'date-time-phone/jquery-ui-timepicker-addon.css' %}" />
+<!-- Date Time Picker CSS -->
+
+</head>
+
+<body>
+
+<style>
+.hero_section {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: url("{% static 'assets/wood.jpg' %}");
+    height: auto;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-position: 50% 0%;
+    width: 100%;
+}
+#calendar {
+	color: #000000;
+}
+#calendar tbody tr th {
+	font-size: small;
+}
+#calendar tbody tr td {
+	color: #000000;
+	font-size: small;
+}
+.contact-form {
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+}
+.contact-form input, select {
+    font-size: small;
+}
+.contact-form button {
+    font-size: medium;
+}
+
+#datetimepicker1 {
+	color: #000000;
+}
+
+</style>
+
+<header class="main_header"><div class="header_table"><table>
+  <tbody>
+    <tr>
+      <td class="secondary-head-section"><a href="{% url 'menu' %}">Menu</a></td>
+      <td class="secondary-head-section"><a href="{% url 'reviews' %}">Reviews</a></td>
+      <td class="primary-head-section"><a href="{% url 'index' %}"><img src="{% static 'assets/logo.png' %}" alt="Les Legumes" class="header_logo"/></a></td>
+      <td class="secondary-head-section"><a href="{% url 'contact' %}">Contact</a></td>
+      <td class="secondary-head-section"><a href="{% url 'reserve' %}">Reserve</a></td>
+    </tr>
+  </tbody>
+</table></div>
+</header>
+<div class="content">
+	<div class="hero_section"><img class="hero_image" src="{% static 'assets/table.jpg' %}" alt="Les Legumes Restaurant"/></div>
+  <div class="contact-form"><form method="post">{% csrf_token %}<div align="center"><table>
+  <tbody>
+    <tr>
+      <th colspan="5" scope="col">Book your next meal with us:</th>
+      </tr>
+    <tr>
+		<td class="form_label">Name*</td>
+      <td class="left-inputs">
+        <input name="textfield" type="text" id="textfield" size="40"></td>
+		<td rowspan="3" class="reserve-space-cell"></td>
+		<td class="form_label">Date and Time*</td>
+      <td class="right-inputs" id="calendar">
+		<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+			{{ form.date }}
+			<div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+				<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+			</div>
+		</div>
+		<script>
+			$(function () {
+				$("#datetimepicker1").datetimepicker({
+					format: 'DD/MM/YYYY HH:mm', style: {color: #000000}
+				});
+			});
+		</script>
+      </td>
+    </tr>
+    <tr>
+		<td class="form_label">Email</td>
+      <td>
+        <input name="email" type="email" id="email" size="40"></td>
+    </tr>
+    <tr>
+		<td class="form_label">Phone Number</td>
+      <td>
+        <input name="tel" type="tel" id="tel" size="40"></td>
+		<td colspan="2"><p>
+		  <label>
+		    <input type="radio" name="Location" value="indoors" id="Location_0">
+		    Indoors</label>
+		  <label>
+		    <input type="radio" name="Location" value="outdoors" id="Location_1">
+		    Outdoors</label>
+		  <label>
+		    <input type="radio" name="Location" value="either" id="Location_2">
+		    No Preference</label>
+		  </p></td>
+		</tr>
+    <tr>
+		<td class="form_label">Confirm via:</td>
+		<td><p>
+		  <label>
+		    <input type="checkbox" name="Preferred Contact" value="email" id="PreferredContact_0" class="checkbox">
+		    Email</label>
+		  <label>
+		    <input type="checkbox" name="Preferred Contact" value="text" id="PreferredContact_1" class="checkbox">
+		    Text</label>
+			<label>
+		    <input type="checkbox" name="Preferred Contact" value="call" id="PreferredContact_2" class="checkbox">
+		    Call</label>
+		  </p></td>
+      <div class="form-actions"><td colspan="3"><input type="submit" name="submit" id="submit" value="Submit"></div>
+		  
+        <input type="reset" name="reset" id="reset" value="Reset"></td>
+      </tr>
+  </tbody>
+</table></div>
+        
+  </form>
+</div>
+</div>
+<footer class="main_footer"><hr>
+<table>
+  <tbody>
+    <tr>
+      <td class="logo_section"><a href="{% url 'index' %}"><img src="{% static 'assets/blk_logo.png' %}" alt="Les Legumes" class="footer_logo"/></a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td class="email_section"><a href="mailto:info@leslegumesrestaurant.com">EMAIL US</a></td>
+      <td class="hours_section">M-Th: 11 a.m. - 10p.m. | F-Sa: 12 p.m. - 12 a.m. | Su: CLOSED</td>
+    </tr>
+  </tbody>
+</table>
+</footer>
+
+</body>
+</html>
+
+

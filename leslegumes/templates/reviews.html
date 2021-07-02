@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Les Legumes - Reviews</title>
+<link href="{% static 'css/llr_styles.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<style>
+.hero_section {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: url("{% static 'assets/wood.jpg' %}");
+    height: auto;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-position: 50% 0%;
+    width: 100%;
+}
+</style>
+
+
+<header class="main_header"><div class="header_table"><table>
+  <tbody>
+    <tr>
+      <td class="secondary-head-section"><a href="{% url 'menu' %}">Menu</a></td>
+      <td class="secondary-head-section"><a href="{% url 'reviews' %}">Reviews</a></td>
+      <td class="primary-head-section"><a href="{% url 'index' %}"><img src="{% static 'assets/logo.png' %}" alt="Les Legumes" class="header_logo"/></a></td>
+      <td class="secondary-head-section"><a href="{% url 'contact' %}">Contact</a></td>
+      <td class="secondary-head-section"><a href="{% url 'reserve' %}">Reserve</a></td>
+    </tr>
+  </tbody>
+</table></div>
+</header>
+<div class="content">
+	<div class="hero_section"><img class="hero_image" src="{% static 'assets/interior2.jpg' %}" alt="Les Legumes Restaurant"/></div>
+	<div class="review-left">
+		<h1 class="review-header">John Doe | March, 2021</h1>
+		<p class="review-quote">"The best vegan meal I've had in a long time. Plant-based eater or not, anyone can appreciate their food!"</p>
+	</div>
+	<div class="review-right">
+		<h1 class="review-header">Ashley Moore | December, 2020</h1>
+		<p class="review-quote">"A super-authentic rendition of classic French cuisine - but vegan! So amazing!"</p>
+	</div>
+	<div class="review-left">
+		<h1 class="review-header">Marcus Miller | September, 2020</h1>
+		<p class="review-quote">"Incredibly accomodating staff and a delicious meal. I will definitely be returning soon."</p>
+	</div>
+	<div class="review-right">
+		<h1 class="review-header">Taylor Kerr | June, 2020</h1>
+		<p class="review-quote">"Chef Leah always comes up with great specials that are a combination unique and traditional, and it just works!"</p>
+	</div><hr>
+
+  <div class="review-links">
+    <p>See more reviews and leave your own
+      
+    </p>
+    <p><a href="http://yelp.com"><img src="{% static 'assets/yelp.png' %}" width="16" height="15" alt="Yelp" class="review-icon"/>Yelp</a> | <a href="http://tripadvisor.com"><img src="{% static 'assets/tripadvisor.png' %}" width="16" height="15" alt="TripAdvisor" class="review-icon"/>TripAdvisor</a> | <a href="http://happycow.net"><img src="{% static 'assets/happycow.png' %}" width="16" height="15" alt="Happy Cow" class="review-icon"/>Happy Cow</a></p>
+  </div>
+</div>
+<footer class="main_footer"><hr>
+<table>
+  <tbody>
+    <tr>
+      <td class="logo_section"><a href="index.html"><img src="{% static 'assets/blk_logo.png' %}" alt="Les Legumes" class="footer_logo"/></a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td class="email_section"><a href="mailto:info@leslegumesrestaurant.com">EMAIL US</a></td>
+      <td class="hours_section">M-Th: 11 a.m. - 10p.m. | F-Sa: 12 p.m. - 12 a.m. | Su: CLOSED</td>
+    </tr>
+  </tbody>
+</table>
+</footer>
+</body>
+</html>

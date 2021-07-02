@@ -1,0 +1,321 @@
+.main_header {
+    background-color: #A6B1A2;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main_header img {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+tbody tr td {
+    color: #FFFFFF;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+    font-size: x-large;
+    text-align: center;
+}
+tr td a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.main_footer {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+.main_footer tbody tr td {
+    color: #000000;
+    font-size: small;
+    vertical-align: middle;
+}
+.main_footer tr td a {
+    color: #000000;
+    text-decoration: none;
+}
+#food1 {
+    background-image: url('{{ STATIC_URL }}assets/bw_food2.jpg');
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: content-box;
+}
+#food2 {
+    background-image: url(assets/bw_food5.jpg);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#food3 {
+    background-image: url(assets/bw_food4.jpg);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+#food4 {
+    background-image: url(assets/bw_food3.jpg);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.content table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: #FFFFFF;
+}
+.food_square {
+    height: 300px;
+}
+.main_footer table {
+    width: 100%;
+    border-width: 0px;
+}
+.footer_logo {
+    width: 30px;
+    height: 30px;
+}
+.logo_section {
+    width: 5%;
+}
+.hours_section {
+    width: 30%;
+}
+.email_section {
+    width: 8%;
+}
+.select_field {
+	width: 50px
+}
+
+
+
+
+
+
+.story {
+    background-color: #FFFFFF;
+}
+.hero_table {
+    background-image: url(static/assets/wood.jpg);
+    background-color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.story h1  {
+    color: #5A5A5A;
+    text-align: center;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+}
+.content .story p {
+    color: #5A5A5A;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+    text-align: center;
+}
+.menu h1 a {
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+}
+.menu h1 {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+}
+.menu {
+    background-color: #A6B1A2;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.hero_section {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: url(assets/wood.jpg);
+    height: auto;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-position: 50% 0%;
+    width: 100%;
+}
+.hero_image   {
+    margin-left: auto;
+    margin-right: auto;
+    width: 725px;
+    height: 446px;
+
+}
+.content .food_menu {
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+
+}
+.content .food_menu h1 {
+    text-align: center;
+}
+.menu_item ul li {
+    text-align: center;
+    margin-top: 10px;
+    list-style-type: none;
+    list-style-position: outside;
+}
+.food_menu tbody tr td {
+    color: #000000;
+    font-size: medium;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.food_menu tbody tr th {
+    font-size: x-large;
+}
+tr td .featured_item {
+    padding-left: 20px;
+    width: 250px;
+    height: auto;
+}
+tr td .featured_item_left {
+    padding-right: 20px;
+}
+tr td label {
+    color: #000000;
+    font-size: medium;
+}
+tbody tr th {
+    font-size: large;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form_label {
+    color: #000000;
+    font-size: medium;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 91px;
+    vertical-align: middle;
+}
+.name_field {
+    width: 242px;
+}
+
+
+tr td #textarea {
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.content .contact-form form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+}
+
+.content .contact-form {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.center_table {
+    text-align: center;
+}
+
+.contact-form form table {
+    width: 85%;
+}
+
+tbody tr .space-cell {
+    width: 100px;
+}
+.buttons {
+    height: 50px;
+}
+#submit {
+    margin-right: 20px;
+}
+.checkbox {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.reserve-space-cell {
+    width: 50px;
+}
+.right-inputs {
+    width: 160px;
+}
+
+.review-left {
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+    text-align: left;
+    width: auto;
+    margin-left: 20%;
+}
+.review-header {
+    font-size: large;
+}
+.review-right {
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+    text-align: right;
+    margin-right: 20%;
+}
+.review-links {
+    text-align: center;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+}
+.review-icon {
+    margin-right: 5px;
+}
+.review-links a {
+    color: #000000;
+    text-decoration: none;
+}
+.secondary-head-section {
+    width: 15%;
+}
+.primary-head-section {
+    width: 25%;
+}
+.header_logo {
+    width: 224px;
+    height: 130px;
+}
+.header_table table {
+    width: 100%;
+    border-width: 0;
+}
+.hero_table table {
+    width: 85%;
+    border-width: thin;
+}
+.content {
+    text-align: center;
+
+}
+.starters {
+    text-align: center;
+
+}
+.entrees {
+    text-align: center;
+}
+.desserts {
+    text-align: center;
+}
+
+
+
+.menu_columns {
+    width: 250px;
+}
+tbody tr td {
+}
+tbody tr .form_label {
+}
+.left-inputs {
+    width: 250px;
+}

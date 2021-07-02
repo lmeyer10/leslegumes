@@ -1,0 +1,144 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Les Legumes - Menu</title>
+<link rel="stylesheet" href="{% static 'css/llr_styles.css' %}">
+</head>
+
+<body>
+
+<style>
+.hero_section {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: url("{% static 'assets/wood.jpg' %}");
+    height: auto;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-position: 50% 0%;
+    width: 100%;
+}
+</style>
+
+<header class="main_header"><div class="header_table"><table>
+  <tbody>
+    <tr>
+      <td class="secondary-head-section"><a href="{% url 'menu' %}">Menu</a></td>
+      <td class="secondary-head-section"><a href="{% url 'reviews' %}">Reviews</a></td>
+      <td class="primary-head-section"><a href="{% url 'index' %}"><img src="{% static 'assets/logo.png' %}" alt="Les Legumes" class="header_logo"/></a></td>
+      <td class="secondary-head-section"><a href="{% url 'contact' %}">Contact</a></td>
+      <td class="secondary-head-section"><a href="{% url 'reserve' %}">Reserve</a></td>
+    </tr>
+  </tbody>
+</table></div>
+</header>
+<div class="content">
+  <div class="hero_section"><img class="hero_image" src="{% static 'assets/chef1.jpeg' %}" alt="Chef Leah"/></div>
+
+  <div class="food_menu">
+    <form action="{% url 'menu' %}" method="POST">
+	{% csrf_token %}
+		<input type="text" name="menu_item">
+		<input type="submit" name="submit" value="Search our Menu">
+
+  </form>
+
+	{% for result in results %}
+
+		<p>{{result.menu_item}} ${{result.price}}</p>
+		
+	{% endfor %}
+   <div class="starters"><table align="center">
+  <tbody>
+    <tr>
+      <th scope="col" colspan="2">Starters</th>
+    </tr>
+    <tr>
+      <td class="menu_columns">Fried Artichokes</td>
+		<td rowspan="4"><img src="{% static 'assets/food3.jpg' %}" alt="Fried Artichokes" class="featured_item"/></td>
+    </tr>
+    <tr>
+      <td>Spring Vegetable Salad</td>
+		</tr>
+    <tr>
+      <td>French Onion Soup</td>
+		</tr>
+    <tr>
+      <td>Potato Leek Soup</td>
+		</tr>
+    <tr>
+      <td colspan="2"><hr></td>
+		</tr>
+  </tbody>
+</table></div>
+
+  <div class="entrees"><table align="center">
+  <tbody>
+    <tr>
+      <th scope="col" colspan="2">Entrees</th>
+    </tr>
+    <tr>
+		<td rowspan="3"><img src="{% static 'assets/food2.jpg' %}" alt="Ratatouille" class="featured_item"/></td>
+      <td>Ratatouille</td>
+    </tr>
+    <tr>
+		<td>Mushroom Bourguignon</td>
+    </tr>
+    <tr>
+		<td>Pesto Pasta with Asparagus</td>
+    </tr>
+    <tr>
+		
+      <td>Stewed Lentils and Potatoes</td>
+		<td rowspan="3"><img src="{% static 'assets/food4.jpg' %}" alt="Stewed Lentils and Potatoes" class="featured_item"/></td>
+    </tr>
+    <tr>
+      <td>Heirloom Tomato Tarte Tatin</td>
+		</tr>
+    <tr>
+      <td>Savory &quot;Cheese&quot; and Spinach Crepes</td>
+		</tr>
+    <tr>
+      <td colspan="2"><hr></td>
+      </tr>
+  </tbody>
+</table></div><div class="desserts"><table align="center">
+  <tbody>
+    <tr>
+      <th scope="col" colspan="2">Desserts</th>
+    </tr>
+    <tr>
+		<td rowspan="3"><img src="{% static 'assets/food6.JPG' %}" alt="Lavender Creme Brulee" class="featured_item_left"/></td>
+      <td>Lavender Creme Brulee</td>
+    </tr>
+    <tr>
+		<td>Chocolate Berry Crepes</td>
+    </tr>
+    <tr>
+		<td >&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2">Ask about our macaroons of the day</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<footer class="main_footer"><hr>
+<table>
+  <tbody>
+    <tr>
+      <td class="logo_section"><a href="{% url 'index' %}"><img src="{% static 'assets/blk_logo.png' %}" alt="Les Legumes" class="footer_logo"/></a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td class="email_section"><a href="mailto:info@leslegumesrestaurant.com">EMAIL US</a></td>
+      <td class="hours_section">M-Th: 11 a.m. - 10p.m. | F-Sa: 12 p.m. - 12 a.m. | Su: CLOSED</td>
+    </tr>
+  </tbody>
+</table>
+</footer>
+</body>
+</html>
